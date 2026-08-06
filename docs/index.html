@@ -75,12 +75,13 @@
   header.nav{
     position:fixed; top:0; left:0; right:0; z-index:100;
     display:flex; align-items:center; justify-content:space-between;
-    padding:18px 24px;
+    padding:9px 24px;
     background:linear-gradient(180deg, rgba(40,4,71,0.92), rgba(40,4,71,0));
     backdrop-filter:blur(2px);
   }
   .nav-mark{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.15em; color:var(--white); opacity:0.85;}
   .nav-mark span{color:var(--green);}
+  .nav-logo{height:80px; width:auto; display:block;}
   .nav-cta{
     font-family:'IBM Plex Mono',monospace;
     font-size:11px; letter-spacing:0.14em;
@@ -374,6 +375,35 @@
   .coord-role{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--yellow); letter-spacing:0.08em; margin-top:10px;}
   .coord-desc{font-size:15.5px; line-height:1.7; color:rgba(248,248,248,0.78); margin-top:18px;}
 
+  /* ---------- section 7: equipo docente ---------- */
+  .team-grid{
+    display:grid; grid-template-columns:1fr; gap:0;
+    margin-top:48px;
+    border-top:1px solid var(--line);
+  }
+  .team-card{
+    display:grid; grid-template-columns:1fr; gap:24px;
+    padding:40px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .team-photo{
+    aspect-ratio:4/5; max-width:220px;
+    border:1px solid var(--line);
+    overflow:hidden;
+    position:relative;
+    background:linear-gradient(160deg, var(--background-secondary), var(--background));
+  }
+  .team-photo img{width:100%; height:100%; object-fit:cover; filter:saturate(0.9) contrast(1.02);}
+  .team-photo--empty::before{
+    content:attr(data-initials);
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Bebas Neue',sans-serif; font-size:64px; color:rgba(248,248,248,0.14);
+  }
+  .team-name{font-size:30px; color:var(--white);}
+  .team-role{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--yellow); letter-spacing:0.08em; margin-top:8px;}
+  .team-desc{font-size:15px; line-height:1.7; color:rgba(248,248,248,0.78); margin-top:14px;}
+
   /* ---------- section 8: convocatoria ---------- */
   .conv{
     border:1px solid var(--green);
@@ -413,6 +443,7 @@
     margin-top:20px;
   }
   .footer-brand h3{font-size:28px;}
+  .footer-logo{width:280px; height:auto; display:block;}
   .footer-brand p{font-size:13.5px; color:rgba(248,248,248,0.55); margin-top:10px; max-width:340px; line-height:1.6;}
   .footer-links{display:flex; flex-direction:column; gap:10px;}
   .footer-links a{
@@ -448,6 +479,7 @@
     .tech-grid{grid-template-columns:repeat(4,1fr);}
     .gallery{column-count:3;}
     .coord{grid-template-columns:0.6fr 1fr;}
+    .team-card{grid-template-columns:220px 1fr; gap:36px;}
   }
   @media (min-width:1024px){
     .aud-list{grid-template-columns:repeat(3,1fr);}
@@ -465,7 +497,7 @@
 <body>
 
 <header class="nav">
-  <div class="nav-mark">RESIDENCIA<span>·</span>LABORATORIO</div>
+  <a href="#que-es"><img src="fotos/logo.png" alt="Residencia Wimumo" class="nav-logo"></a>
   <a href="#convocatoria" class="nav-cta">Postularme</a>
 </header>
 
@@ -662,6 +694,80 @@
   </div>
 </section>
 
+<!-- ================= SECCIÓN 7 — EQUIPO DOCENTE ================= -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="eyebrow">07 — Equipo docente</div>
+    <h2 class="sec-title">Quiénes dictan<br>la residencia</h2>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-photo"><img src="fotos/alejandra-ceriani.jpg" alt="Alejandra Ceriani"></div>
+        <div>
+          <h3 class="team-name">Alejandra Ceriani</h3>
+          <div class="team-role">Investigadora y docente · UNLP</div>
+          <p class="team-desc">Doctora en Arte y Magíster en Estética y Teoría de las Artes (UNLP), investigadora, docente de posgrado y directora de la Cátedra Libre Educación y Mediación Digital en Danza y Performance (UNLP). Desarrolla investigaciones y performances interactivas con sensado óptico y bioeléctrico, y dicta seminarios y conferencias en universidades nacionales e internacionales.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo"><img src="fotos/ana-sedeno.jpg" alt="Ana Sedeño"></div>
+        <div>
+          <h3 class="team-name">Ana Sedeño</h3>
+          <div class="team-role">Investigadora y artista · Universidad de Málaga</div>
+          <p class="team-desc">Profesora en la Facultad de Ciencias de la Comunicación de la Universidad de Málaga. Investigadora y artista interesada en formatos como la videodanza, la videoescena y los visuales para artes escénicas. Tiene una beca de Estancias de profesores e investigadores sénior en centros extranjeros, incluido el Programa "Salvador de Madariaga" (2024), del Ministerio de Ciencia, Innovación y Universidades del Gobierno de España.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo"><img src="fotos/jose-iranzo.png" alt="José V. Iranzo"></div>
+        <div>
+          <h3 class="team-name">José V. Iranzo</h3>
+          <div class="team-role">Profesor Contratado Doctor · Universidad de Málaga</div>
+          <p class="team-desc">Profesor Contratado Doctor de la Universidad de Málaga (acreditado Titular), imparte docencia en las titulaciones de máster y grado en las facultades de Comunicación y Bellas Artes de dicha Universidad. Formación de post-grado en la Universidad de Artes Aplicadas y en el Departamento de Ciencias de la Comunicación de Viena (Austria). Su trayectoria investigadora abarca los ámbitos teóricos y prácticos en el campo de las prácticas audiovisuales de vanguardia. Su obra audiovisual ha sido mostrada en centros y certámenes de relevancia internacional, como el Museo Nacional Reina Sofía o el World Wide Video Festival de La Haya. Actualmente investiga sobre el audiovisual performativo.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo team-photo--empty" data-initials="JP"></div>
+        <div>
+          <h3 class="team-name">Jean Paul Miquet</h3>
+          <div class="team-role">Osteópata y músico</div>
+          <p class="team-desc">Osteópata de formación en la Escuela Argentina de Osteopatía y músico de oficio. Estudiante permanente del cuerpo, su fisiología, sus mapas y sus misterios, componiendo en performance teniendo como búsqueda principal la investigación sobre diálogo entre lenguajes y disciplinas. Durante los últimos años trabaja con el grupo Fascial Art con biosensado (EMG) para investigación y desarrollo de tecnologías para procesos creativo-compositivos.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo"><img src="fotos/alejandro-veiga.jpeg" alt="Alejandro Veiga"></div>
+        <div>
+          <h3 class="team-name">Alejandro Veiga</h3>
+          <div class="team-role">Ingeniero en Electrónica · Investigador CONICET</div>
+          <p class="team-desc">Ingeniero en Electrónica, Magíster en Ingeniería y Doctor en Ingeniería por la Facultad de Ingeniería de la Universidad Nacional de La Plata (UNLP). Actualmente se desempeña como Profesor Titular de dicha facultad e Investigador Independiente del CONICET en Argentina. Su trayectoria académica y científica se centra en el procesamiento de señales y la instrumentación electrónica aplicada a la física experimental y la bioingeniería, desarrollando investigaciones orientadas al diseño y aplicación de tecnologías para el análisis de señales en contextos científicos y biomédicos.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo"><img src="fotos/tania-duplat.jpeg" alt="Tania Duplat"></div>
+        <div>
+          <h3 class="team-name">Tania Duplat</h3>
+          <div class="team-role">Directora de arte · Fundadora de Zincro</div>
+          <p class="team-desc">Licenciada en Publicidad y Diseño por la Universidad de Bogotá-Colombia Jorge Tadeo Lozano, inició su trayectoria profesional como directora de arte, hasta fundar Zincro, su boutique creativa de medios interactivos. Allí, junto a sus colegas, creó la cátedra de formación en publicidad contemporánea para la Universidad Politécnico Grancolombiano, donde ejerció como docente.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo"><img src="fotos/lisandro-aguiar.jpg" alt="Lisandro Aguiar"></div>
+        <div>
+          <h3 class="team-name">Lisandro Aguiar</h3>
+          <div class="team-role">Diseñador Multimedial · UNLP</div>
+          <p class="team-desc">Licenciado en Diseño Multimedial por la Facultad de Artes de la Universidad Nacional de La Plata (UNLP). Su trabajo de investigación se centra en la convergencia entre arte, tecnología e inteligencia artificial, con especial interés en la interacción humano-computadora, el diseño de experiencias interactivas y el uso de biosensores para la producción artística y la investigación performática. Ha presentado trabajos en congresos nacionales sobre arte computacional e interacción humano-computadora, investigando metodologías que vinculan el diseño, la bioingeniería y las tecnologías emergentes.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ================= SECCIÓN 8 — CONVOCATORIA ================= -->
 <section class="sec-alt" id="convocatoria">
@@ -708,7 +814,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h3 class="display">Residencia<br>Wimumo</h3>
+        <img src="fotos/logo.png" alt="Residencia Wimumo" class="footer-logo">
         <p>Señales bioeléctricas del cuerpo: exploración interdisciplinaria para la creación performática en escena.</p>
       </div>
       <div class="footer-links">
